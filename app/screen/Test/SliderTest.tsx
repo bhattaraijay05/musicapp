@@ -15,7 +15,7 @@ const SliderTest = () => {
       <MyText color="red" title>
         Hi
       </MyText>
-      <MyButton center>Hi There</MyButton>
+      <MyButton>Hi There</MyButton>
 
       <Animated.View>
         <Svg viewBox="0 0 196.82 195.32" style={styles.svg}>
