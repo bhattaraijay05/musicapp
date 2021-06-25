@@ -2,6 +2,7 @@ import React from 'react';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 import Main from '@app/screen/MainScreen/Main';
 import SongScreen from '@app/screen/SongScreen/SongScreen';
+import SheetTest from '@app/screen/Test/SheetTest';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -26,6 +27,11 @@ export default function MusicNavigator() {
         // @ts-ignore:
         component={SongScreen}
         options={() => options}
+      />
+      <Stack.Screen
+        name="Sheettest"
+        // @ts-ignore:
+        component={SheetTest}
       />
     </Stack.Navigator>
   );

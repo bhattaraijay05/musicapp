@@ -10,6 +10,7 @@ import DragableList from '@app/screen/Test/DragableList';
 import LGTest from '@app/screen/Test/LGTest';
 import SliderTest from '@app/screen/Test/SliderTest';
 import MusicNavigator from './MusicNavigator';
+import SheetTest from '@app/screen/Test/SheetTest';
 const Tab = createBottomTabNavigator();
 
 type MyTabBarProps = {
@@ -126,7 +127,7 @@ const TabNav = () => {
       <Tab.Screen name="Linear" component={SliderTest} />
       <Tab.Screen name="Main" component={MusicNavigator} />
       <Tab.Screen name="Home" component={TestScreen} />
-      <Tab.Screen name="Pan" component={PanHandle} />
+      <Tab.Screen name="Pan" component={SheetTest} />
     </Tab.Navigator>
   );
 };

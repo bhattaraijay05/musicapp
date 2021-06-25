@@ -73,7 +73,7 @@ type CustomButtonProps = {
 
 const MyButton: React.FC<CustomButtonProps> = ({
   children,
-  color = '#fff',
+  color = '#000',
   title,
   fontSize,
   style,
@@ -81,23 +81,21 @@ const MyButton: React.FC<CustomButtonProps> = ({
   textAlign = 'center',
   bold,
   fontWeight,
-  onPress,
-  backgroundColor = '#000',
+  backgroundColor = '#fff',
   padding = 10,
   borderRadius = 5,
   width = 150,
   tension = 500,
-  activeScale = 0.9,
+  activeScale = 0.99,
   friction = 3,
-  onLongPress,
+  ...props
 }) => {
   return (
     <TouchableScale
-      onPress={onPress}
       tension={tension}
       activeScale={activeScale}
       friction={friction}
-      onLongPress={onLongPress}>
+      {...props}>
       <Text
         style={[
           Texts.myText,

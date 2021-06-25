@@ -19,8 +19,7 @@ const SliderTest = () => {
       <DragableView>
         <MyButton>Hi There</MyButton>
       </DragableView>
-
-      <Animated.View>
+      <DragableView>
         <Svg viewBox="0 0 196.82 195.32" style={styles.svg}>
           <Circle
             cx={50 * rad}
@@ -30,17 +29,15 @@ const SliderTest = () => {
             fill="red"
           />
         </Svg>
-      </Animated.View>
-      <View>
-        <Slider
-          style={{width: 200, height: 40}}
-          minimumValue={0}
-          maximumValue={1}
-          minimumTrackTintColor="#f00"
-          maximumTrackTintColor="#000000"
-          onValueChange={e => setRad(e)}
-        />
-      </View>
+      </DragableView>
+      <Slider
+        style={{width: 200, height: 40}}
+        minimumValue={0}
+        maximumValue={1}
+        minimumTrackTintColor="#f00"
+        maximumTrackTintColor="#000000"
+        onValueChange={e => setRad(e)}
+      />
       <ZoomableImage
         style={{borderRadius: 5}}
         source={{

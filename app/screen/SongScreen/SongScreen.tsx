@@ -1,7 +1,8 @@
 import colors from '@app/config/colors';
 import {Container, Shadow} from '@app/styles/Styles';
 import {DragableView} from '@app/utils/AnimatedElements';
-import {MyText} from '@app/utils/Elements';
+import {MyButton, MyText} from '@app/utils/Elements';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, View, Image, Dimensions} from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
@@ -10,6 +11,7 @@ const {width, height} = Dimensions.get('window');
 
 const SongScreen = ({route}: {route: any}) => {
   const {item, id} = route.params;
+  const navigation = useNavigation();
 
   return (
     <View style={Container.container}>
@@ -49,15 +51,17 @@ const SongScreen = ({route}: {route: any}) => {
           </DragableView>
 
           <View style={styles.titleView}>
-            <SharedElement id={`item.${id}.title`}>
-              <MyText
-                title
-                color={colors.primary}
-                center
-                fontFamily="Oswald-Bold">
-                {item.title} {id}
-              </MyText>
-            </SharedElement>
+            <MyButton onPress={() => navigation.navigate('Sheettest')}>
+              <SharedElement id={`item.${id}.title`}>
+                <MyText
+                  title
+                  color={colors.primary}
+                  center
+                  fontFamily="Oswald-Bold">
+                  {item.title} {id}
+                </MyText>
+              </SharedElement>
+            </MyButton>
             <SharedElement id={`item.${id}.description`}>
               <MyText color={colors.tertiary} center bold>
                 Taylor Swift {id}
