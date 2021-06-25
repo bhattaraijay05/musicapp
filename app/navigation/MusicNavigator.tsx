@@ -28,11 +28,6 @@ export default function MusicNavigator() {
         component={SongScreen}
         options={() => options}
       />
-      <Stack.Screen
-        name="Sheettest"
-        // @ts-ignore:
-        component={SheetTest}
-      />
     </Stack.Navigator>
   );
 }

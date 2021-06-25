@@ -1,11 +1,12 @@
-import React from 'react';
-import {ViewStyle} from '@app/styles/Styles';
+import React, {useCallback, useMemo, useRef} from 'react';
+import {ViewStyle, ModalStyle} from '@app/styles/Styles';
 import {
   TextStyle,
   Image,
   StyleSheet,
   Dimensions,
   ImageStyle,
+  View,
 } from 'react-native';
 import {
   PanGestureHandler,
@@ -20,6 +21,8 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {BottomSheetModalRef} from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetModalProvider/types';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
@@ -149,4 +152,37 @@ const ZoomableImage: React.FC<ZoomableImageViewProps> = ({
   );
 };
 
-export {DragableView, ZoomableImage};
+type BottomModalProps = {
+  innerRef: BottomSheetModalRef | any;
+  snap: number;
+};
+
+const BottomModal: React.FC<BottomModalProps> = ({
+  children,
+  innerRef,
+  snap = 50,
+}) => {
+  const snapPoints = useMemo(() => ['25%', `${snap}%`], []);
+
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
+  return (
+    <View style={{...StyleSheet.absoluteFillObject}}>
+      <BottomSheetModalProvider>
+        <View style={ModalStyle.container}>
+          <BottomSheetModal
+            ref={innerRef}
+            index={1}
+            snapPoints={snapPoints}
+            onChange={handleSheetChanges}>
+            {children}
+          </BottomSheetModal>
+        </View>
+      </BottomSheetModalProvider>
+    </View>
+  );
+};
+
+export {DragableView, ZoomableImage, BottomModal};

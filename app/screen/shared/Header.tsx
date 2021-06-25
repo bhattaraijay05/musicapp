@@ -6,7 +6,12 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import TouchableScale from 'react-native-touchable-scale';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Header = () => {
+type CustomButtonProps = {
+  onLeftButtonPress?: () => void;
+  onRightButtonPress?: () => void;
+};
+
+const Header: React.FC<CustomButtonProps> = ({onRightButtonPress}) => {
   const navigation = useNavigation();
 
   const goBack = () => {
@@ -29,6 +34,7 @@ const Header = () => {
         </MyText>
       </View>
       <TouchableScale
+        onPress={onRightButtonPress}
         activeScale={0.9}
         tension={50}
         friction={7}

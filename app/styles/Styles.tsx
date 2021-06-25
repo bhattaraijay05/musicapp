@@ -52,4 +52,14 @@ const HeaderStyle = StyleSheet.create({
   },
 });
 
-export {Container, Texts, HeaderStyle, ViewStyle, Shadow};
+const ModalStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+});
+
+export {Container, Texts, HeaderStyle, ViewStyle, Shadow, ModalStyle};
