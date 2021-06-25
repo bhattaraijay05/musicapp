@@ -18,7 +18,7 @@ const Main = () => {
         </MyText>
       </View>
 
-      {Array(5)
+      {Array(20)
         .fill({
           image:
             'https://images.pexels.com/photos/7333831/pexels-photo-7333831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',

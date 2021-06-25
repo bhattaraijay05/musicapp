@@ -14,6 +14,27 @@ const Container = StyleSheet.create({
   },
 });
 
+const Shadow = StyleSheet.create({
+  shadowBox: {
+    shadowColor: '#f00',
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+    elevation: 24,
+  },
+});
+
+const ViewStyle = StyleSheet.create({
+  flexContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+  },
+});
+
 const Texts = StyleSheet.create({
   myText: {
     fontSize: 18,
@@ -31,4 +52,4 @@ const HeaderStyle = StyleSheet.create({
   },
 });
 
-export {Container, Texts, HeaderStyle};
+export {Container, Texts, HeaderStyle, ViewStyle, Shadow};

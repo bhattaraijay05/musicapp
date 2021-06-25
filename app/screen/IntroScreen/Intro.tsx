@@ -170,7 +170,7 @@ export default function App() {
       <AnimatedFlatlist
         onScroll={scrollHandler}
         pagingEnabled
-        scrollEventThrottle={16}
+        scrollEventThrottle={0.0001}
         ref={ref}
         data={items}
         horizontal

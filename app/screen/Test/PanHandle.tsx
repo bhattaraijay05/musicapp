@@ -9,6 +9,7 @@ import Animated, {
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
+  PinchGestureHandler,
   PinchGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 import {Container} from '@app/styles/Styles';
@@ -106,9 +107,9 @@ const PanHandle = () => {
       <PanGestureHandler onGestureEvent={panGestureEvent}>
         <Animated.View style={[styles.box, panStyle]} />
       </PanGestureHandler>
-      {/* <PinchGestureHandler onGestureEvent={pinchGestureEvent}>
+      <PinchGestureHandler onGestureEvent={pinchGestureEvent}>
         <Animated.View style={[styles.box, pinchStyle]} />
-      </PinchGestureHandler> */}
+      </PinchGestureHandler>
     </View>
   );
 };

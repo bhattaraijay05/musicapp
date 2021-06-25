@@ -15,9 +15,6 @@ const List: React.FC<ListProps> = ({item, id}) => {
   return (
     <TouchableScale
       activeScale={0.9}
-      tension={50}
-      friction={7}
-      useNativeDriver
       onPress={() => navigation.navigate('SongScreen', {item: item, id: id})}>
       <View style={styles.listView}>
         <View style={styles.pictureView}>

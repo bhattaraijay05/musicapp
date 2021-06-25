@@ -94,10 +94,6 @@ const MyTabBar: React.FC<MyTabBarProps> = ({
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
-            onLongPress={onLongPress}
-            activeScale={0.9}
-            tension={50}
-            friction={7}
             useNativeDriver
             style={{
               flex: 1,
