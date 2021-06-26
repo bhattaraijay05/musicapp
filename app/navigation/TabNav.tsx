@@ -11,6 +11,7 @@ import LGTest from '@app/screen/Test/LGTest';
 import SliderTest from '@app/screen/Test/SliderTest';
 import MusicNavigator from './MusicNavigator';
 import SheetTest from '@app/screen/Test/SheetTest';
+import routes from '@app/config/routes';
 const Tab = createBottomTabNavigator();
 
 type MyTabBarProps = {
@@ -124,10 +125,10 @@ const MyTabBar: React.FC<MyTabBarProps> = ({
 const TabNav = () => {
   return (
     <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
-      <Tab.Screen name="Linear" component={SliderTest} />
-      <Tab.Screen name="Main" component={MusicNavigator} />
-      <Tab.Screen name="Home" component={TestScreen} />
-      <Tab.Screen name="Pan" component={SheetTest} />
+      <Tab.Screen name={routes.linear} component={SliderTest} />
+      <Tab.Screen name={routes.main} component={MusicNavigator} />
+      <Tab.Screen name={routes.home} component={TestScreen} />
+      <Tab.Screen name={routes.pan} component={SheetTest} />
     </Tab.Navigator>
   );
 };

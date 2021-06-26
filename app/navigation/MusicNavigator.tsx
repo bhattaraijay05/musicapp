@@ -3,6 +3,7 @@ import {createSharedElementStackNavigator} from 'react-navigation-shared-element
 import Main from '@app/screen/MainScreen/Main';
 import SongScreen from '@app/screen/SongScreen/SongScreen';
 import SheetTest from '@app/screen/Test/SheetTest';
+import routes from '@app/config/routes';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -20,10 +21,10 @@ const options = {
 
 export default function MusicNavigator() {
   return (
-    <Stack.Navigator headerMode="none" initialRouteName="MainPage">
-      <Stack.Screen name="MainPage" component={Main} />
+    <Stack.Navigator headerMode="none" initialRouteName={routes.musicMainPage}>
+      <Stack.Screen name={routes.musicMainPage} component={Main} />
       <Stack.Screen
-        name="SongScreen"
+        name={routes.songScreen}
         // @ts-ignore:
         component={SongScreen}
         options={() => options}

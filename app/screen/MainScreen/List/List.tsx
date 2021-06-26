@@ -1,4 +1,5 @@
 import colors from '@app/config/colors';
+import routes from '@app/config/routes';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
@@ -15,7 +16,9 @@ const List: React.FC<ListProps> = ({item, id}) => {
   return (
     <TouchableScale
       activeScale={0.9}
-      onPress={() => navigation.navigate('SongScreen', {item: item, id: id})}>
+      onPress={() =>
+        navigation.navigate(routes.songScreen, {item: item, id: id})
+      }>
       <View style={styles.listView}>
         <View style={styles.pictureView}>
           <SharedElement id={`item.${id}.image_url`}>

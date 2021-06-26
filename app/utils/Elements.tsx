@@ -69,6 +69,8 @@ type CustomButtonProps = {
   tension?: number;
   activeScale?: number;
   friction?: number;
+  rounded?: boolean;
+  nobounce?: boolean;
 };
 
 const MyButton: React.FC<CustomButtonProps> = ({
@@ -86,14 +88,16 @@ const MyButton: React.FC<CustomButtonProps> = ({
   borderRadius = 5,
   width = 150,
   tension = 500,
-  activeScale = 0.99,
+  activeScale = 0.9,
   friction = 3,
+  nobounce,
+  rounded,
   ...props
 }) => {
   return (
     <TouchableScale
       tension={tension}
-      activeScale={activeScale}
+      activeScale={nobounce ? 1 : activeScale}
       friction={friction}
       {...props}>
       <Text
@@ -111,7 +115,7 @@ const MyButton: React.FC<CustomButtonProps> = ({
             fontWeight: bold ? 'bold' : fontWeight,
             backgroundColor,
             padding,
-            borderRadius,
+            borderRadius: rounded ? width / 4 : borderRadius,
             width,
           },
           {

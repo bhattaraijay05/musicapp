@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Intro from '@app/screen/IntroScreen/Intro';
 import TabNav from './TabNav';
+import routes from '@app/config/routes';
 
 const Stack = createStackNavigator();
 const WelcomeStack = () => {
@@ -11,8 +12,8 @@ const WelcomeStack = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="Intro" component={Intro} />
-      <Stack.Screen name="firstpage" component={TabNav} />
+      <Stack.Screen name={routes.welcome} component={Intro} />
+      <Stack.Screen name={routes.firstpage} component={TabNav} />
     </Stack.Navigator>
   );
 };

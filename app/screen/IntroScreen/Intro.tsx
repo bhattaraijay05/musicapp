@@ -18,6 +18,7 @@ import TouchableScale from 'react-native-touchable-scale';
 import IntroScreens from './IntroScreens';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import routes from '@app/config/routes';
 
 const {height, width} = Dimensions.get('window');
 
@@ -141,7 +142,7 @@ export default function App() {
   };
 
   const _onDone = () => {
-    navigation.navigate('firstpage');
+    navigation.navigate(routes.firstpage);
     AsyncStorage.setItem('LaunchingFirstTime', 'true');
   };
 
