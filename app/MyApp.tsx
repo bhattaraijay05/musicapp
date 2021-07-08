@@ -12,7 +12,7 @@ const MyApp = () => {
         setIsFirstLaunch(true);
       } else {
         setIsFirstLaunch(false);
-      }
+      } 
     });
   }, []);
 
